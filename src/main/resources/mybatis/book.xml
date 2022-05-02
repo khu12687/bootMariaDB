@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="book">
+	<!-- alias로 설정한 Book을 resultType에 -->
+	<select id="list" resultType="Book">
+		SELECT * FROM book
+	</select>
+	
+	<insert id="add">
+		INSERT INTO book VALUES(NULL, #{bookname}, #{publisher}, #{price})
+	</insert>
+	
+	<select id="item" resultType="Book">
+		SELECT * FROM book WHERE bookid = #{bookid}
+	</select>
+	
+	<update id="update">
+		UPDATE book SET bookname=#{bookname}, publisher = #{publisher}, price = #{price}
+		WHERE bookid = #{bookid}
+	</update>
+	
+	<delete id="delete">
+		DELETE FROM book WHERE bookid =#{bookid}
+	</delete>
+	
+</mapper>

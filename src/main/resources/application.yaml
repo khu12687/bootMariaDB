@@ -1,0 +1,16 @@
+server:
+  port: 9090
+  
+spring:
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    url: jdbc:mysql://localhost/bookstore
+    username: root
+    password: 1234
+    
+mybatis:
+  config-location: classpath:mybatis-config.xml
+  
+logging:
+  level:
+    '[book]': trace
